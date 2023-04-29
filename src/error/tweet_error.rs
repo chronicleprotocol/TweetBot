@@ -17,16 +17,6 @@ pub enum TweetErrorKind {
     DotEnvError(#[from] dotenv::Error),
 }
 
-impl<'e> TweetError<'e> {
-    #[track_caller]
-    pub fn new(kind: TweetErrorKind) -> Self {
-        Self {
-            kind,
-            location: *Location::caller(),
-        }
-    }
-}
-
 impl std::fmt::Display for TweetError<'_> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(
