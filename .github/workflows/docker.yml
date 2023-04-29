@@ -1,10 +1,9 @@
 name: Build & Push Production Docker Images
 on:
   workflow_dispatch: # Allow manual trigger
-  workflow_run:
-    branches: 
-      - master
   push: # Build & release on tags
+    branches:
+      - master
     tags:
       - 'v*'
 
