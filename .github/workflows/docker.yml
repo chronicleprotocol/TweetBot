@@ -3,7 +3,7 @@ on:
   workflow_dispatch: # Allow manual trigger
   push: # Build & release on tags
     branches:
-      - master
+      - main
     tags:
       - 'v*'
 
